@@ -5,7 +5,7 @@ This project uses a **K-Nearest Neighbors (KNN)** model to find movies similar t
 
 ## Overview
 
-The notebook loads a movie dataset, removes the label column, trains a KNN model on selected features, and returns the **5 nearest movies** to a custom movie feature vector.
+The notebook loads a movie dataset, trains a KNN model on selected features, and returns the **5 nearest movies** to a custom movie feature vector.
 
 In the notebook, the example target movie is **"The Post"**, represented by its IMDb rating and genre flags.
 
@@ -36,7 +36,7 @@ Source used in the notebook:
 df = pd.read_csv('https://github.com/ArinB/MSBA-CA-Data/raw/main/CA05/movies_recommendation_data.csv')
 ```
 
-## Tech Stack
+## Requirements
 
 - Python
 - pandas
@@ -49,7 +49,7 @@ df = pd.read_csv('https://github.com/ArinB/MSBA-CA-Data/raw/main/CA05/movies_rec
 1. Import required libraries.
 2. Load the movie dataset.
 3. Inspect the dataset shape and column information.
-4. Drop the `Label` column since it is not used for recommendation.
+4. Drop the `Label` column since it is not used for recommendations.
 5. Train a `NearestNeighbors` model with `n_neighbors=5`.
 6. Create a custom feature vector for a movie.
 7. Use `kneighbors()` to find the 5 most similar movies.
@@ -101,39 +101,7 @@ Install dependencies:
 pip install pandas numpy scikit-learn notebook
 ```
 
-## Usage
 
-Open the notebook:
 
-```bash
-jupyter notebook KNN_Recommender.ipynb
-```
+#### **By Sarkis Shil-Gevorkyan and Shahzeb Aether**
 
-Or run it in Google Colab.
-
-Then update the custom movie feature dictionary to test recommendations for other movies.
-
-## Project Structure
-
-```bash
-KNN_Movie_Recommender/
-│
-├── KNN_Recommender.ipynb
-└── README.md
-```
-
-## Possible Improvements
-
-- Add movie title lookup instead of manually entering feature values
-- Normalize numerical features before training
-- Experiment with different distance metrics
-- Build a small web app using Streamlit or Flask
-- Expand the dataset with more genres and metadata
-
-## Author
-
-**Sarkis Shil-Gevorkyan**
-
-## License
-
-This project is for educational purposes.
